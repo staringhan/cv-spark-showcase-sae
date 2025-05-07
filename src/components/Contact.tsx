@@ -78,7 +78,6 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Envoyez-moi un message</h3>
             <Card>
               <form onSubmit={handleSubmit} className="p-6 space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
