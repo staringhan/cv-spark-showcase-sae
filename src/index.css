@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,8 +16,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 204 70% 53%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -33,7 +33,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 204 70% 53%;
+    --ring: 224.3 76.3% 48%;
 
     --radius: 0.5rem;
   }
@@ -62,11 +62,15 @@
   }
   
   .section-title {
-    @apply text-3xl sm:text-4xl font-bold mb-8 text-center;
+    @apply text-3xl sm:text-4xl font-bold mb-4 relative inline-block after:content-[''] after:w-12 after:h-1 after:bg-primary after:absolute after:-bottom-2 after:left-0;
   }
   
   .section-subtitle {
-    @apply text-xl font-medium text-muted-foreground mb-12 text-center max-w-3xl mx-auto;
+    @apply text-xl font-medium text-muted-foreground mb-12 max-w-3xl;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
   }
 }
 
@@ -76,7 +80,7 @@
 
 .timeline-item::before {
   content: '';
-  @apply absolute left-0 top-2 w-3 h-3 bg-cv-blue rounded-full;
+  @apply absolute left-0 top-2 w-3 h-3 bg-primary rounded-full;
 }
 
 .timeline-item::after {
@@ -90,9 +94,23 @@
 
 .animate-on-scroll {
   opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
 .animate-on-scroll.animated {
-  @apply animate-fade-in;
+  opacity: 1;
+  transform: translateY(0);
 }
 
+.glass-card {
+  @apply bg-secondary/50 backdrop-blur-sm border border-white/10;
+}
+
+.tech-gradient {
+  background: linear-gradient(225deg, rgba(59,130,246,0.15) 0%, rgba(99,102,241,0.15) 100%);
+}
+
+.tech-border {
+  @apply border border-white/10;
+}

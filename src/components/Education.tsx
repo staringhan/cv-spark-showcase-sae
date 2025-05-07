@@ -43,28 +43,33 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="bg-white dark:bg-gray-900">
+    <section id="education" className="bg-cv-dark">
+      <div className="absolute inset-0 bg-tech-pattern opacity-5 pointer-events-none"></div>
       <div className="section-container">
-        <h2 className="section-title">Formation</h2>
-        <p className="section-subtitle">Mon parcours académique et mes certifications</p>
+        <div className="max-w-3xl mb-12">
+          <h2 className="section-title">Formation</h2>
+          <p className="section-subtitle">
+            Mon parcours académique et mes certifications
+          </p>
+        </div>
 
-        <div className="max-w-3xl mx-auto mt-12">
-          <div className="space-y-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-8">
             {education.map((edu, index) => (
               <div key={index} className="timeline-item animate-on-scroll">
-                <Card>
-                  <CardHeader className="bg-blue-50 dark:bg-blue-900/30 p-6">
+                <Card className="glass-card border border-white/10 hover:border-primary/30 transition-all duration-300">
+                  <CardHeader className="bg-secondary/80 p-6">
                     <div className="flex justify-between items-start">
                       <div className="flex items-start gap-4">
-                        <div className="bg-cv-blue text-white p-2 rounded-full">
+                        <div className="bg-primary/20 p-2 rounded-lg text-primary">
                           <edu.icon className="h-5 w-5" />
                         </div>
                         <div>
                           <CardTitle className="text-xl font-bold">{edu.institution}</CardTitle>
-                          <p className="text-gray-600 dark:text-gray-400 mt-1">{edu.degree}</p>
+                          <p className="text-gray-400 mt-1">{edu.degree}</p>
                         </div>
                       </div>
-                      <Badge variant="outline" className="bg-white text-cv-blue border-cv-blue">
+                      <Badge variant="outline" className="bg-primary/10 text-primary border-primary/30">
                         {edu.period}
                       </Badge>
                     </div>
@@ -73,12 +78,12 @@ const Education = () => {
                     <CardContent className="p-6">
                       {edu.certifications && (
                         <div className="mb-4">
-                          <h4 className="font-semibold mb-2">Certifications</h4>
-                          <ul className="space-y-1">
+                          <h4 className="font-semibold mb-3 text-gray-200">Certifications</h4>
+                          <ul className="space-y-2">
                             {edu.certifications.map((cert, i) => (
                               <li key={i} className="flex items-center gap-2">
-                                <CheckCircle className="h-4 w-4 text-green-500" />
-                                <span>{cert}</span>
+                                <CheckCircle className="h-4 w-4 text-primary" />
+                                <span className="text-gray-300">{cert}</span>
                               </li>
                             ))}
                           </ul>
@@ -86,11 +91,12 @@ const Education = () => {
                       )}
                       {edu.details && (
                         <div>
-                          <h4 className="font-semibold mb-2">Détails</h4>
-                          <ul className="space-y-1">
+                          <h4 className="font-semibold mb-3 text-gray-200">Détails</h4>
+                          <ul className="space-y-2">
                             {edu.details.map((detail, i) => (
                               <li key={i} className="flex items-center gap-2">
-                                <span>• {detail}</span>
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                                <span className="text-gray-300">{detail}</span>
                               </li>
                             ))}
                           </ul>

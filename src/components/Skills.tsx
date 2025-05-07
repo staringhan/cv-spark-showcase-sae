@@ -66,16 +66,21 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-gray-50 dark:bg-gray-800">
+    <section id="skills" className="bg-background">
+      <div className="absolute inset-0 bg-tech-pattern opacity-5 pointer-events-none"></div>
       <div className="section-container">
-        <h2 className="section-title">Compétences</h2>
-        <p className="section-subtitle">Mes expertises techniques et savoir-faire</p>
+        <div className="max-w-3xl mb-12">
+          <h2 className="section-title">Compétences</h2>
+          <p className="section-subtitle">
+            Mes expertises techniques et savoir-faire
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="animate-on-scroll overflow-hidden">
-              <div className="bg-blue-50 dark:bg-blue-900/30 p-4 flex items-center gap-3">
-                <div className="bg-cv-blue text-white p-2 rounded-full">
+            <Card key={index} className="animate-on-scroll glass-card border border-white/10 hover:border-primary/30 transition-all duration-300">
+              <div className="bg-secondary/80 p-4 flex items-center gap-3">
+                <div className="bg-primary/20 p-2 rounded-lg text-primary">
                   <category.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-lg font-semibold">{category.category}</h3>
@@ -83,7 +88,7 @@ const Skills = () => {
               <CardContent className="p-5">
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, i) => (
-                    <Badge key={i} variant="outline" className="bg-white">
+                    <Badge key={i} variant="outline" className="bg-secondary/50 text-gray-300 border-white/10 hover:border-primary/30 hover:bg-primary/10 transition-all duration-300">
                       {skill}
                     </Badge>
                   ))}
