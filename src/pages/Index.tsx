@@ -12,6 +12,9 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
+    // Force dark mode
+    document.documentElement.classList.add('dark');
+    
     const handleScroll = () => {
       const animatedElements = document.querySelectorAll('.animate-on-scroll');
       
@@ -35,7 +38,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
       <main>
         <Hero />
