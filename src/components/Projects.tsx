@@ -26,7 +26,7 @@ const Projects = () => {
             </div>
             <CardHeader>
               <CardTitle className="flex justify-between items-center">
-                <span>Projet SAE 1</span>
+                <span>SAE 53</span>
                 <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </Button>
@@ -47,7 +47,7 @@ const Projects = () => {
             </div>
             <CardHeader>
               <CardTitle className="flex justify-between items-center">
-                <span>Projet SAE 2</span>
+                <span>SAE 24</span>
                 <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
                   <ArrowRight className="h-4 w-4 text-primary" />
                 </Button>
